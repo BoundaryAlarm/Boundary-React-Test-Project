@@ -1,9 +1,12 @@
-import axios from 'axios';
+import axios, {AxiosInstance, AxiosProxyConfig, AxiosRequestConfig} from 'axios';
 
-const getClient = (baseUrl = null, proxy = null) => {
-    const options = {
+const getClient = (
+    baseUrl: string = '',
+    proxy: AxiosProxyConfig | false = false) => {
+    const options: AxiosRequestConfig = {
         baseURL: baseUrl,
-        proxy: proxy
+        proxy: proxy,
+        headers: undefined
     };
 
     const client = axios.create(options);
@@ -33,7 +36,11 @@ const getClient = (baseUrl = null, proxy = null) => {
 };
 
 class BoundaryJSClient {
-    constructor(baseUrl = null, proxyConfig = null) {
+    private readonly client: AxiosInstance;
+
+    constructor(
+        baseUrl: string = '',
+        proxyConfig: AxiosProxyConfig | false = false) {
         this.client = getClient(baseUrl, proxyConfig);
     }
 

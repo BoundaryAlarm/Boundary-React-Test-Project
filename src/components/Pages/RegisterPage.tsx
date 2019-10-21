@@ -2,7 +2,22 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-class RegisterPage extends React.Component {
+interface IRegisterPageState {
+    user: {
+        firstName: string,
+        lastName: string,
+        username: string,
+        password: string
+    },
+    submitted: boolean
+}
+
+interface IPropsFromHOC {
+    registering: boolean
+}
+
+
+class RegisterPage extends React.Component<IPropsFromHOC, IRegisterPageState> {
     constructor(props) {
         super(props);
 
@@ -35,11 +50,12 @@ class RegisterPage extends React.Component {
         event.preventDefault();
 
         this.setState({ submitted: true });
+
+        /*
         const { user } = this.state;
         const { dispatch } = this.props;
-        /*
         if (user.firstName && user.lastName && user.username && user.password) {
-            dispatch(userActions.register(user));
+        dispatch(userActions.register(user));
         }
         */
     }

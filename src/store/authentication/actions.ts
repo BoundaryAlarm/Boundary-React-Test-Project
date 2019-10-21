@@ -1,5 +1,5 @@
-import authServiceClient from "./../../api/auth-service-client";
-import {browserHistory} from "./../../core/browserhistory";
+import authServiceClient from "../../api/auth-service-client";
+import {browserHistory} from "../../core/browserhistory";
 
 export const USER_LOGGED_OUT = '@@auth/LOG_OUT';
 export const USER_LOGIN_REQUEST = '@@auth/LOG_IN_REQ';

@@ -2,12 +2,16 @@ import React from "react";
 import userServiceClient from "../../api/user-service-client";
 import { connect } from 'react-redux';
 
-class UsersPage extends React.Component {
+interface IUsersPageState {
+    users: Array<any>
+}
+
+class UsersPage extends React.Component<{}, IUsersPageState> {
     constructor(props){
         super(props);
 
         this.state = {
-            users: undefined
+            users: new Array<any>()
         }
     }
 
