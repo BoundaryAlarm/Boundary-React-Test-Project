@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "module": "esnext",
-    "jsx": "react",
+    "jsx": "react-jsx",
     "moduleResolution": "node",
     "target": "es6",
     "lib": [
@@ -20,7 +20,8 @@
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": true
+    "noEmit": true,
+    "noFallthroughCasesInSwitch": true
   },
   "include": [
     "src"
