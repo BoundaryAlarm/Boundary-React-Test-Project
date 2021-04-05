@@ -5,6 +5,6 @@ let userServiceClient = new BoundaryJSClient(process.env.REACT_APP_API_BASE_URL 
 export default {
 
     getAll() {
-        return userServiceClient.get();
+        return userServiceClient.get('');
     }
 }
